@@ -55,8 +55,8 @@ on the user's own machine from public git — the registry just points.
 ```mermaid
 flowchart TB
     app["App plugin<br/>(shell + buildApp)"]
-    iface1(("Interface:<br/>GalleryModule"))
-    iface2(("Interface:<br/>ImageFilter"))
+    iface1(("GalleryModule<br/>interface"))
+    iface2(("ImageFilter<br/>interface"))
     mod["Module<br/>(photo_gallery)"]
     ext1["Extension<br/>(grayscale)"]
     ext2["Extension<br/>(sepia)"]
@@ -67,10 +67,12 @@ flowchart TB
     ext1 -.implements.-> iface2
     ext2 -.implements.-> iface2
 
-    style app fill:#e0d4f7,stroke:#8a6fd4
-    style mod fill:#d4e8f7,stroke:#5a87c0
-    style ext1 fill:#f7e8d4,stroke:#c0925a
-    style ext2 fill:#f7e8d4,stroke:#c0925a
+    style app fill:#e0d4f7,stroke:#8a6fd4,color:#1a1a1a
+    style mod fill:#d4e8f7,stroke:#5a87c0,color:#1a1a1a
+    style ext1 fill:#f7e8d4,stroke:#c0925a,color:#1a1a1a
+    style ext2 fill:#f7e8d4,stroke:#c0925a,color:#1a1a1a
+    style iface1 fill:#f0f0f0,stroke:#555,color:#1a1a1a
+    style iface2 fill:#f0f0f0,stroke:#555,color:#1a1a1a
 ```
 
 - **App** — the shell. Wires modules into a running Flutter app, owns the
