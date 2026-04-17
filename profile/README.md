@@ -96,24 +96,27 @@ one abstract class each.
 |---|---|
 | **[mss_core](https://github.com/flutter-mss/mss_core)** | Plugin contract (Dart). Interfaces every plugin implements against. Versioned semver. |
 | **[mss_server](https://github.com/flutter-mss/mss_server)** | FastAPI + SQLite registry. Auth, plugin/interface catalog, asset hosting. |
-| **[mss_app](https://github.com/flutter-mss/mss_app)** | macOS Flutter client. Browse, pick, assemble, build. |
+| **[mss_app](https://github.com/flutter-mss/mss_app)** | macOS Flutter client. Browse, pick, assemble, build. *(private; builds distributed via `mss_releases`)* |
+| **[mss_releases](https://github.com/flutter-mss/mss_releases)** | Download channel — signed + notarized `MSS.app` zips attached to each version tag. |
 | **[demo_photoapp](https://github.com/flutter-mss/demo_photoapp)** | Reference bundle — seven-package photo viewer (1 app + 1 module + 2 extensions + 3 defs). |
 | **[demo_flappybird](https://github.com/flutter-mss/demo_flappybird)** | Reference bundle — playable game with swappable physics + asset-pack extensions. |
 | **[demo_alternative_physics](https://github.com/flutter-mss/demo_alternative_physics)** | Single-package extension demonstrating the non-subpath case. |
 
 ---
 
-## Try it
+## Download
 
-Install Flutter + Xcode (the client shells out to `flutter build macos`),
-clone `mss_app`, and run:
+Grab the latest signed + notarized macOS build:
 
-```bash
-flutter run -d macos
-```
+→ [**Download MSS for macOS**](https://github.com/flutter-mss/mss_releases/releases/latest)
+ · [all releases](https://github.com/flutter-mss/mss_releases/releases)
 
-Browsing is anonymous. Publishing requires an account (register through the
-app; confirmation mail goes through Mailjet).
+Unzip, drag `MSS.app` to `/Applications`, launch. You'll also need Flutter
+and the Xcode Command Line Tools installed — the app shells out to
+`flutter build macos` when assembling plugins into a runnable binary.
+
+Browsing the registry is anonymous. Publishing plugins requires an account
+(register through the app; confirmation mail is sent via Mailjet).
 
 <!-- image: app-screenshot
 prompt: "Screenshot mockup of a macOS app store window titled 'Memention
